@@ -1,19 +1,27 @@
-function mesesDeLaEstacion(estacion) {
+enum Estacion {
+    Invierno,
+    Primavera,
+    Verano,
+    Otono
+};
+
+
+function mesesDeLaEstacion(estacion: Estacion) {
     let mesesEstacion: string;
     switch (estacion) {
-        case "Otono":
+        case Estacion.Otono:
             mesesEstacion = "Septiembre a Noviembre";
             break;
-        case "Invierno":
+        case Estacion.Invierno:
             mesesEstacion = "Diciembre a Febrero";
             break;
-        case "Primavera":
+        case Estacion.Primavera:
             mesesEstacion = "Marzo a Mayo";
             break;
-        case "Verano":
+        case Estacion.Verano:
             mesesEstacion = "Junio a Agosto";
     }
     return mesesEstacion;
 }
 
-console.log(mesesDeLaEstacion("Otono"));
+console.log(mesesDeLaEstacion(Estacion.Otono));

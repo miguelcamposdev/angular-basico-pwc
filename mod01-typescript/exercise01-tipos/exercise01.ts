@@ -1,17 +1,17 @@
-let firstName;
-let lastName;
-let fullName;
-let age;
-let ukCitizen;
+let firstName: string;
+let lastName: string;
+let fullName: string;
+let age: number;
+let ukCitizen: boolean;
 
-firstName = 'Rebecca';
-lastName = 'Smith';
-age = 42;
+firstName = 'Miguel';
+lastName = 'Campos';
+age = 35;
 ukCitizen = false;
-fullName = firstname + " " + lastname;
+fullName = firstName + " " + lastName;
 
 if (ukCitizen) {
-    console.log("My name is " + fullName + ", I'm " + age + ", and I'm a citizen of the United Kingdom.");
+    console.log(`My name is ${fullName}, I'm ${age}, and I'm a citizen of the United Kingdom.`);
 } else {
-    console.log("My name is " + fullName + ", I'm " + age + ", and I'm not a citizen of the United Kingdom.");
+    console.log(`My name is ${fullName}, I'm  ${age}, and I'm not a citizen of the United Kingdom.`);
 }

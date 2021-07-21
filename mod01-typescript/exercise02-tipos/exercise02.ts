@@ -1,8 +1,8 @@
-let x;
-let y;
-let a;
+let x: number;
+let y: number;
+let a: number;
 
-x = 'five';
+x = 5;
 y = 7;
 a = x + y;
 
