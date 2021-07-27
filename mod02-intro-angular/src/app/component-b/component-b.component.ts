@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Geo, Usuario } from '../models/usuario.interface';
 
 @Component({
@@ -8,11 +8,16 @@ import { Geo, Usuario } from '../models/usuario.interface';
 })
 export class ComponentBComponent implements OnInit {
   @Input() location: Geo | undefined;
+  @Output() locationEmitter = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
     console.log(`${this.location?.lat}, ${this.location?.lng}`);
+  }
+
+  sendLocation(lat?: string, lng?: string) {
+    this.locationEmitter.emit(`${lat},${lng}`);
   }
 
 }

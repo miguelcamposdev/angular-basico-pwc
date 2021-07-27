@@ -38,4 +38,8 @@ export class ComponentAComponent implements OnInit {
     console.log(this.usuario);
   }
 
+  showLocation(latLng: string) {
+    alert(latLng);
+  }
+
 }
