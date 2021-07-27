@@ -1,0 +1,9 @@
+<p>Estamos en el componente padre</p>
+
+<p>
+    <button (click)="decrementar()" *ngIf="contador > 0">-</button>
+    Contador en padre: {{ contador }}
+    <button (click)="incrementar()">+</button>
+</p>
+
+<app-component-hijo [extra]="contador + 6"></app-component-hijo>
