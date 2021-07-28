@@ -1,1 +1,14 @@
-<p>movies-popular works!</p>
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar 
+      class="example-header-image" 
+      style="background-image: url('{{getImageUrl(favMovie?.poster_path)}}');"></div>
+      <mat-card-title>Película Favorita: {{favMovie? favMovie?.title : 'No se ha seleccionado ninguna'}}</mat-card-title>
+      <mat-card-subtitle>{{ favMovie?.release_date }}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+
+
+<div *ngFor="let currentMovie of popularMovies">
+    <app-movie-detail [movie]="currentMovie" (movieEmitter)="setNewFavMovie($event)"></app-movie-detail>
+</div>

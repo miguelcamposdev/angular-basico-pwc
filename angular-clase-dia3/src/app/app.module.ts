@@ -7,6 +7,8 @@ import { ComponentPadreComponent } from './component-padre/component-padre.compo
 import { ComponentHijoComponent } from './component-hijo/component-hijo.component';
 import { MoviesPopularComponent } from './movies-popular/movies-popular.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
