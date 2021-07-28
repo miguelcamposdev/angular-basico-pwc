@@ -1,0 +1,17 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar 
+      class="example-header-image" 
+      style="background-image: url('{{getImageUrl(person?.profile_path)}}');"></div>
+      <mat-card-title>{{ person?.name }}</mat-card-title>
+      <mat-card-subtitle>{{ person?.gender}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="getImageUrl(person?.profile_path)" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="favClicked(person)">MARCAR FAV</button>
+    </mat-card-actions>
+  </mat-card>

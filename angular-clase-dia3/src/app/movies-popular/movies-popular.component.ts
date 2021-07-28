@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PopularMovie, PopularMoviesResponse } from '../models/popular-movies.interface';
+import { MovieService } from '../services/movie.service';
 
 const MOVIES: PopularMoviesResponse = JSON.parse(`{
   "page": 1,
@@ -80,15 +81,17 @@ const MOVIES: PopularMoviesResponse = JSON.parse(`{
 })
 export class MoviesPopularComponent implements OnInit {
   selectedMovie: PopularMovie = MOVIES.results[0];
-  popularMovies: PopularMovie[] = MOVIES.results;
+  popularMovies: PopularMovie[] | undefined;
   favMovie: PopularMovie | undefined;
 
-  constructor() { }
-
-  ngOnInit(): void {
-    console.log(MOVIES.page);
+  constructor(private movieService: MovieService) { 
   }
 
+  ngOnInit(): void {
+    this.movieService.getPopularMovies().subscribe(resultado => {
+      this.popularMovies = resultado.results;
+    });
+  }
 
   getImageUrl(fileName: string | undefined) {
     return `https://image.tmdb.org/t/p/w500/${fileName}`;

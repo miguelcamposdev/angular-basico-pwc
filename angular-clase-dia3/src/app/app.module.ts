@@ -9,6 +9,9 @@ import { MoviesPopularComponent } from './movies-popular/movies-popular.componen
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import { PersonPopularListComponent } from './person-popular-list/person-popular-list.component';
+import { PersonPopularItemComponent } from './person-popular-item/person-popular-item.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,16 @@ import {MatButtonModule} from '@angular/material/button';
     ComponentPadreComponent,
     ComponentHijoComponent,
     MoviesPopularComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    PersonPopularListComponent,
+    PersonPopularItemComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
