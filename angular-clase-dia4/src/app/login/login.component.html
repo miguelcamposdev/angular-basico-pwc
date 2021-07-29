@@ -1,11 +1,11 @@
 
 
 <form [formGroup]="loginForm">
-
     <input type="email" placeholder="Email" formControlName="email" />
+    <span class="error" *ngIf="checkError('email')">Email no válido</span>
     <br/>
     <input type="password" placeholder="Password" formControlName="pass" />
+    <span class="error" *ngIf="checkError('pass')">Password no válido</span>
     <br/>
     <input type="button" value="Login" (click)="login()" />
-
 </form>
