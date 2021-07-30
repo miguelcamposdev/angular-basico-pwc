@@ -29,6 +29,11 @@ export class LoginComponent implements OnInit {
       this.service.doLogin(this.loginDto).subscribe(
         data => {
           console.log(data);
+          // Con esta línea me guardo el token en el almacenamiento local del navegador
+          localStorage.setItem('token', data.token);
+
+          // Para poder consultar el token en otro punto
+          let token = localStorage.getItem('token');
           alert('Login correcto');
         },
         error => {

@@ -1,0 +1,47 @@
+<p>directivas works!</p>
+
+<img [src]="imagenUrl" />
+
+<button (click)="cambiarImagen()">Cambiar Imagen</button>
+
+<br/>
+
+<input name="nombre" [(ngModel)]="nombre" />
+
+<br/>
+
+La propiedad nombre vale: {{ nombre }}
+
+<hr/>
+
+<p *ngIf="mostrarPolitica; else politicaAceptada"> 
+    <strong>Política de privacidad y cookies:</strong> <br/>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam odit ad velit, soluta nobis numquam. Obcaecati, doloremque quod soluta deserunt, reiciendis nesciunt adipisci voluptatum tempora magnam doloribus sapiente reprehenderit quos!
+</p>
+
+<ng-template #politicaAceptada> 
+    <strong>Ya se ha aceptado la política de cookies</strong> <br/>    
+</ng-template>
+<button (click)="aceptarCookies(true)" *ngIf="mostrarPolitica">Aceptar las cookies</button>
+
+<br/>
+<hr/>
+
+<button mat-raised-button (click)="like()">
+    <mat-icon [ngClass]="{'icon-blue': meGusta}">thumb_up</mat-icon> Me gusta
+</button>
+
+<br/>
+<hr/>
+
+<p>{{ fecha | date:'d-M-Y' }}</p>
+<p>{{ fechaFormateada }}</p>
+
+<button (click)="decrementar()" *ngIf="coste > 0"> - </button>
+<p>{{ coste }} {{ coste | euroLabel }}</p>
+<button (click)="incrementar()"> + </button>
+
+<br/>
+<hr/>
+
+<button (click)="navegar()">Ir a Admin</button>

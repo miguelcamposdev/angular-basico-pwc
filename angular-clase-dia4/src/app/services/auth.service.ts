@@ -12,6 +12,8 @@ const defaultHeaders = {
   })
 };
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,6 +25,18 @@ export class AuthService {
 
   doLogin(loginDto: LoginDto): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(`${apiUrl}/auth/login`, loginDto, defaultHeaders);
+  }
+
+  getAllTweets() {
+    let token = localStorage.getItem('token');
+    const authHeaders = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      })
+    };
+    return this.http.get<AuthResponse>(`${apiUrl}/tweets/all`, authHeaders);
+
   }
 
 }
